@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import style from './index.module.scss';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import Slider from './Slider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,7 +19,7 @@ root.render(
         <NavLink to="/3">3</NavLink>
       </div>
       <Routes>
-        <Route path="/" element={"App"}></Route>
+        <Route path="/" element={<Slider />}></Route>
         <Route path="/1" element={"1"}></Route>
         <Route path="/2" element={"2"}></Route>
         <Route path="/3" element={"3"}></Route>
