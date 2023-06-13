@@ -1,27 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import style from './index.module.scss';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div className="App">
-      <header className="App-header">
-        <img src="/logo512.png" className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <NavLink to="/1">1</NavLink>
+      </div>
+      <div>
+        <NavLink to="/2">2</NavLink>
+      </div>
+      <div>
+        <NavLink to="/3">3</NavLink>
+      </div>
+      <Routes>
+        <Route path="/" element={"App"}></Route>
+        <Route path="/1" element={"1"}></Route>
+        <Route path="/2" element={"2"}></Route>
+        <Route path="/3" element={"3"}></Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
