@@ -3,18 +3,19 @@
 .body {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .textSide {
-  flex: 1 1 50%;
-  padding: 0px 20px 0px 0px;
+  flex: 1 1 60%;
+  padding: 0px 30px 0px 0px;
 }
 
 .title {
   color: #9B9B9B;
   margin: 0px 0px 18px 0px;
   font-family: 'Benzin';
-  font-size: 62px;
+  font-size: 50px;
   line-height: 73px;
 }
 
@@ -27,12 +28,17 @@
 }
 
 .imgSide {
-  flex: 1 1 40%;
+  flex: 1 0 40%;
   display: flex;
   align-items: end;
   justify-content: end;
-  
+
   img {
     max-width: 100%;
+  }
+
+  @media (max-width: 1075px) {
+    align-items: center;
+    justify-content: center;
   }
 }
