@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import './BurgerMenu.scss'
 
-function BurgerMenu(props) {
+function BurgerMenu({ notifyHeaderMenu }) {
   const [isBurgerActive, setBurgerActive] = useState(false);
 
   function handleBurgerClick() {
     setBurgerActive(!isBurgerActive);
+    notifyHeaderMenu();
   };
 
   return (
