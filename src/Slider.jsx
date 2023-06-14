@@ -9,14 +9,14 @@ function Slider(props) {
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
-      slidesPerView={1}
+      slidesPerView={2}
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide><img src="/img/leo.jpg" alt="leo" /></SwiperSlide>
+      <SwiperSlide><img src="/img/design-1.jpg" alt="" /></SwiperSlide>
+      <SwiperSlide><img src="/img/cards/lightgrey-card.jpg" alt="" /></SwiperSlide>
       <SwiperSlide>Slide 4</SwiperSlide>
     </Swiper>
   );
