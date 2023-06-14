@@ -8,11 +8,15 @@
   transition: 0.5s ease;
 
   font-family: 'Benzin';
-  font-size: 14px;
+  font-size: calc(10px + 6 * (100vw / 1440));
   line-height: 150%;
 
   &:hover {
     color: #3E3E3E;
     background-color: #9B9B9B;
+  }
+
+  @media (max-width: 767px) {
+    font-size: calc(10px + 6 * ((100vw - 320px) / 1440));
   }
 }

@@ -1,4 +1,6 @@
-.block {}
+.block {
+  margin: 0px 0px 10vh 0px;
+}
 
 .body {
   display: flex;
@@ -8,30 +10,42 @@
 
 .textSide {
   flex: 1 1 60%;
-  padding: 0px 30px 0px 0px;
+  padding: 0px 2vw 0px 0px;
+
+  @media (max-width: 767px) {
+    padding: 0px 0px 0px 0px;
+  }
 }
 
 .title {
   color: #9B9B9B;
   margin: 0px 0px 18px 0px;
   font-family: 'Benzin';
-  font-size: 50px;
-  line-height: 73px;
+  font-size: calc(24px + 38 * (100vw / 1440));
+  line-height: 114%;
+
+  @media (max-width: 767px) {
+    font-size: calc(24px + 38 * ((100vw - 320px) / 1440));
+  }
 }
 
 .text {
   color: #9B9B9B;
   margin: 0px 0px 32px 0px;
   font-family: 'Montserrat';
-  font-size: 24px;
+  font-size: calc(14px + 10 * (100vw / 1440));
   line-height: 150%;
+
+  @media (max-width: 767px) {
+    font-size: calc(14px + 10 * ((100vw - 320px) / 1440));
+  }
 }
 
 .imgSide {
   flex: 1 0 40%;
   display: flex;
-  align-items: end;
-  justify-content: end;
+  align-items: flex-end;
+  justify-content: flex-end;
 
   img {
     max-width: 100%;
