@@ -18,34 +18,34 @@ function Header(props) {
         {isBurgerActive ?
           <nav className={style.menu} style={{ top: "0", opacity: "1" }}>
             <ul className={style.list}>
-              <Link name={"Главная"} />
-              <Link name={"Преимущества"} />
-              <Link name={"Галерея"} />
-              <Link name={"Контакты"} />
-              <Link name={"Заказать звонок"} />
+              <Link name={"Главная"} path={"/"} />
+              <Link name={"Преимущества"} path={"/1"} />
+              <Link name={"Галерея"} path={"/2"} />
+              <Link name={"Контакты"} path={"/3"} />
+              <Link name={"Заказать звонок"} path={"/4"} />
             </ul>
           </nav>
           :
           <nav className={style.menu}>
             <ul className={style.list}>
-              <Link name={"Главная"} />
-              <Link name={"Преимущества"} />
-              <Link name={"Галерея"} />
-              <Link name={"Контакты"} />
-              <Link name={"Заказать звонок"} />
+              <Link name={"Главная"} path={"/"} />
+              <Link name={"Преимущества"} path={"/1"} />
+              <Link name={"Галерея"} path={"/2"} />
+              <Link name={"Контакты"} path={"/3"} />
+              <Link name={"Заказать звонок"} path={"/4"} />
             </ul>
           </nav>
         }
         <BurgerMenu notifyHeaderMenu={() => notifyHeaderMenu()} />
       </div>
-    </div>
+    </div >
   );
 };
 
-function Link({ name }) {
+function Link({ name, path }) {
   return (
     <li className={style.item}>
-      <NavLink to="#" className={style.link}>{name}</NavLink>
+      <NavLink to={path} className={style.link}>{name}</NavLink>
     </li>
   );
 };
