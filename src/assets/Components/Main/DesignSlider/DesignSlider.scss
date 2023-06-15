@@ -1,0 +1,52 @@
+.design-slider {
+  margin: 0px -9.375vw;
+
+  &__block {}
+
+  &__line {
+    margin: 0px 0px 3.8vw 0px;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: end;
+    margin: 0px 0px 7vw 0px;
+    flex-wrap: wrap;
+
+    @media (max-width: 370px) {
+      justify-content: center;
+    }
+  }
+
+  &__social {
+    display: flex;
+  }
+
+  &__social-link {
+    padding: 8px;
+    margin: 0px 1.7vw 0px 0px;
+
+    &:last-child {
+      margin: 0px 7vw 0px 0px;
+
+      @media (max-width: 405px) {
+        margin: 0px 1.7vw 0px 0px;
+      }
+    }
+  }
+
+  &__down-btn {
+    display: none;
+
+    @media (max-width: 371px) {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+
+.swiper-slide {
+  max-width: 100%;
+  overflow: hidden;
+}

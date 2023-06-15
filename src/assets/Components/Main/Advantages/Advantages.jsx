@@ -5,7 +5,7 @@ import Line from '../General/Line'
 function Advantages(props) {
   return (
     <>
-      <div className={style.line}><Line /></div>
+      <div className={style.line}><Line text={"6 причин выбрать нас"} /></div>
       <div className={style.block}>
         <div className={style.body}>
           <div className={style.row}>

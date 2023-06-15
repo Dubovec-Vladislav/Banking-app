@@ -1,9 +1,9 @@
 import React from 'react'
 import './General.scss'
 
-function Line(props) {
+function Line({ text }) {
   return (
-    <div className="line">6 причин выбрать нас</div>
+    <div className="line">{text}</div>
   );
 };
 

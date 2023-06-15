@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import style from './index.module.scss'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
-// import Slider from './Slider'
 import Header from './assets/Components/Header/Header'
 import Main from './assets/Components/Main/Main'
 
