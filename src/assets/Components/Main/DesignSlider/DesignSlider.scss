@@ -1,7 +1,9 @@
 .design-slider {
-  margin: 0px -9.375vw 7.6vw -9.375vw;
+  margin: 0px -9.375vw 0 -9.375vw;
 
   &__block {
+    margin: 0px -9.375vw 7.6vw -9.375vw;
+
     @media (max-width: 426px) {
       margin: 0px 0px 50px 0px;
     }
@@ -67,7 +69,7 @@
     }
   }
 
-  @media (max-width: 371px) {
+  @media (max-width: 769px) {
     margin: 0px -9.375vw 26px -9.375vw;
   }
 }
@@ -75,4 +77,9 @@
 .swiper-slide {
   max-width: 100%;
   overflow: hidden;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
