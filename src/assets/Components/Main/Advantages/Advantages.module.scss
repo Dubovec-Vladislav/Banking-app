@@ -4,6 +4,10 @@
 
 .block {
   margin: 0px 0px 8vw 0px;
+
+  @media (max-width: 426px) {
+    margin: 0px 0px 50px 0px;
+  }
 }
 
 .body {

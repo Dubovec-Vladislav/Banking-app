@@ -35,7 +35,7 @@ function DesignSlider(props) {
   };
 
   return (
-    <>
+    <div className="design-slider__block">
       <div className="design-slider__line"><Line text={"Посмотри на наши дизайны"} /></div>
       <div className="design-slider__menu">
         <div className="design-slider__social">
@@ -43,7 +43,7 @@ function DesignSlider(props) {
           <div className="design-slider__social-link"><img src="/img/DesignSlider/Instagram.svg" alt="Instagram" /></div>
           <div className="design-slider__social-link"><img src="/img/DesignSlider/TikTok.svg" alt="TikTok" /></div>
         </div>
-        <Button text={"Заказать"} />
+        <div className="design-slider__header-btn"><Button text={"Заказать"} /></div>
       </div>
       <Swiper
         className="design-slider"
@@ -61,7 +61,7 @@ function DesignSlider(props) {
         <SwiperSlide><img src="/img/DesignSlider/design-4.jpg" alt="design-4" /></SwiperSlide>
       </Swiper >
       <div className="design-slider__down-btn"><Button text={"Заказать"} /></div>
-    </>
+    </div>
   );
 };
 

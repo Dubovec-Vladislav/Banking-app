@@ -1,7 +1,11 @@
 .design-slider {
-  margin: 0px -9.375vw;
+  margin: 0px -9.375vw 7.6vw -9.375vw;
 
-  &__block {}
+  &__block {
+    @media (max-width: 426px) {
+      margin: 0px 0px 50px 0px;
+    }
+  }
 
   &__line {
     margin: 0px 0px 3.8vw 0px;
@@ -9,7 +13,7 @@
 
   &__menu {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin: 0px 0px 7vw 0px;
     flex-wrap: wrap;
 
@@ -23,6 +27,7 @@
   }
 
   &__social-link {
+    background-color: #2A2A2A;
     padding: 8px;
     margin: 0px 1.7vw 0px 0px;
 
@@ -35,16 +40,37 @@
     }
   }
 
+  &__header-btn {
+    min-width: 14.6vw;
+
+    * {
+      width: 100%;
+    }
+
+    @media (max-width: 769px) {
+      display: none;
+    }
+  }
+
   &__down-btn {
     display: none;
 
-    @media (max-width: 371px) {
+    * {
+      max-width: 280px;
+      width: 100%;
+    }
+
+    @media (max-width: 769px) {
       display: block;
+      margin: 0px 0px 26px 0px;
       text-align: center;
     }
   }
-}
 
+  @media (max-width: 371px) {
+    margin: 0px -9.375vw 26px -9.375vw;
+  }
+}
 
 .swiper-slide {
   max-width: 100%;
