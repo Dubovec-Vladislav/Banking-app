@@ -9,7 +9,7 @@ import Button from '../General/Button'
 function DesignSlider(props) {
   const breakpoints = {
     1025: {
-      slidesPerView: 3.5,
+      slidesPerView: 4,
       spaceBetween: 30,
     },
     769: {
