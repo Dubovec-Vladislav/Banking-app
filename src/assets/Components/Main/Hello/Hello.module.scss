@@ -46,9 +46,14 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  transition: 0.75s ease;
 
   img {
     max-width: 100%;
+  }
+
+  &:hover {
+    transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 3deg);
   }
 
   @media (max-width: 1200px) {

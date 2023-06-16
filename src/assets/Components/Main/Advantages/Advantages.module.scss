@@ -51,6 +51,11 @@
 
 .rotate {
   transform: rotate(5deg);
+  transition: 0.5s;
+
+  &:hover {
+    transform: rotate(0deg);
+  }
 
   @media (max-width: 1040px) {
     transform: rotate(0deg);
@@ -61,6 +66,11 @@
   width: 100%;
   padding: 24px 24px 33px 24px;
   border: 1px solid #9B9B9B;
+  transition: 0.4s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 }
 
 .img {}
