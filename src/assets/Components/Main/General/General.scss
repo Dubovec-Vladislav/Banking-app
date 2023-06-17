@@ -38,4 +38,8 @@
     font-size: calc(20px + 18 * ((100vw - 320px) / 1440));
     text-align: center;
   }
+
+  @media (max-width: 426px) {
+    margin: 0px -9.35vw 35px -9.35vw;
+  }
 }
