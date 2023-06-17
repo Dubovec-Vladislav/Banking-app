@@ -5,6 +5,7 @@ import Design from './Design/Design'
 import Advantages from './Advantages/Advantages'
 import DesignSlider from './DesignSlider/DesignSlider'
 import Map from './Map/Map'
+import CardSlider from './CardSlider/CardSlider'
 
 function Main(props) {
   return (
@@ -14,6 +15,7 @@ function Main(props) {
       <Advantages />
       <DesignSlider />
       <Map />
+      <CardSlider />
     </div>
   );
 };

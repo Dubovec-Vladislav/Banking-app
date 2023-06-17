@@ -9,7 +9,7 @@ import Button from '../General/Button'
 function DesignSlider(props) {
   const breakpoints = {
     1025: {
-      slidesPerView: 4,
+      slidesPerView: 3.5,
       spaceBetween: 30,
     },
     769: {
@@ -36,31 +36,33 @@ function DesignSlider(props) {
 
   return (
     <div className="design-slider__block">
-      <div className="design-slider__line"><Line text={"Посмотри на наши дизайны"} /></div>
-      <div className="design-slider__menu">
-        <div className="design-slider__social">
-          <div className="design-slider__social-link"><img src="/img/DesignSlider/VK.svg" alt="VK" /></div>
-          <div className="design-slider__social-link"><img src="/img/DesignSlider/Instagram.svg" alt="Instagram" /></div>
-          <div className="design-slider__social-link"><img src="/img/DesignSlider/TikTok.svg" alt="TikTok" /></div>
+      <div className="design-slider__body">
+        <div className="design-slider__line"><Line text={"Посмотри на наши дизайны"} /></div>
+        <div className="design-slider__menu">
+          <div className="design-slider__social">
+            <div className="design-slider__social-link"><img src="/img/DesignSlider/VK.svg" alt="VK" /></div>
+            <div className="design-slider__social-link"><img src="/img/DesignSlider/Instagram.svg" alt="Instagram" /></div>
+            <div className="design-slider__social-link"><img src="/img/DesignSlider/TikTok.svg" alt="TikTok" /></div>
+          </div>
+          <div className="design-slider__header-btn"><Button text={"Заказать"} /></div>
         </div>
-        <div className="design-slider__header-btn"><Button text={"Заказать"} /></div>
+        <Swiper
+          className="design-slider"
+          modules={[A11y]}
+          loop={true}
+          breakpoints={breakpoints}
+        >
+          <SwiperSlide><img src="/img/DesignSlider/design-1.jpg" alt="design-1" /></SwiperSlide>
+          <SwiperSlide><img src="/img/DesignSlider/design-2.jpg" alt="design-2" /></SwiperSlide>
+          <SwiperSlide><img src="/img/DesignSlider/design-3.jpg" alt="design-3" /></SwiperSlide>
+          <SwiperSlide><img src="/img/DesignSlider/design-4.jpg" alt="design-4" /></SwiperSlide>
+          <SwiperSlide><img src="/img/DesignSlider/design-1.jpg" alt="design-1" /></SwiperSlide>
+          <SwiperSlide><img src="/img/DesignSlider/design-2.jpg" alt="design-2" /></SwiperSlide>
+          <SwiperSlide><img src="/img/DesignSlider/design-3.jpg" alt="design-3" /></SwiperSlide>
+          <SwiperSlide><img src="/img/DesignSlider/design-4.jpg" alt="design-4" /></SwiperSlide>
+        </Swiper >
+        <div className="design-slider__down-btn"><Button text={"Заказать"} /></div>
       </div>
-      <Swiper
-        className="design-slider"
-        modules={[A11y]}
-        loop={true}
-        breakpoints={breakpoints}
-      >
-        <SwiperSlide><img src="/img/DesignSlider/design-1.jpg" alt="design-1" /></SwiperSlide>
-        <SwiperSlide><img src="/img/DesignSlider/design-2.jpg" alt="design-2" /></SwiperSlide>
-        <SwiperSlide><img src="/img/DesignSlider/design-3.jpg" alt="design-3" /></SwiperSlide>
-        <SwiperSlide><img src="/img/DesignSlider/design-4.jpg" alt="design-4" /></SwiperSlide>
-        <SwiperSlide><img src="/img/DesignSlider/design-1.jpg" alt="design-1" /></SwiperSlide>
-        <SwiperSlide><img src="/img/DesignSlider/design-2.jpg" alt="design-2" /></SwiperSlide>
-        <SwiperSlide><img src="/img/DesignSlider/design-3.jpg" alt="design-3" /></SwiperSlide>
-        <SwiperSlide><img src="/img/DesignSlider/design-4.jpg" alt="design-4" /></SwiperSlide>
-      </Swiper >
-      <div className="design-slider__down-btn"><Button text={"Заказать"} /></div>
     </div>
   );
 };

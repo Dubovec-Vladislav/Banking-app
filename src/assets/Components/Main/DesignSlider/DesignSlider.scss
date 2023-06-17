@@ -9,6 +9,8 @@
     }
   }
 
+  &__body {}
+
   &__line {
     margin: 0px 0px 3.8vw 0px;
   }
@@ -82,7 +84,6 @@
 
 .swiper-slide {
   max-width: 100%;
-  overflow: hidden;
 
   img {
     width: 100%;
