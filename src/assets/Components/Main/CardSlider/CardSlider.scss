@@ -114,10 +114,10 @@
     font-family: 'Benzin';
     font-size: calc(18px + 14 * (100vw / 1440));
     line-height: 156%;
-    text-align: center;
 
     @media (max-width: 769px) {
       font-size: calc(18px + 14 * ((100vw - 320px) / 1440));
+      text-align: center;
     }
   }
 
