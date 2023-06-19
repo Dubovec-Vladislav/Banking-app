@@ -25,6 +25,7 @@
 .body {
   position: relative;
   display: flex;
+  min-height: 60px;
   align-items: center;
   justify-content: space-between;
   text-align: center;
@@ -62,7 +63,7 @@
   }
 }
 
-.menuActive {
+.activeMenu {
   top: 0;
   opacity: 1;
 }
@@ -97,8 +98,26 @@
   letter-spacing: 1px;
 
   &:hover {
-    background: #3E3E3E;
+    background-color: #3E3E3E;
     border: 1px solid #9B9B9B;
     border-bottom: none;
+
+    @media (max-width: 640px) {
+      border: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    border: none;
+  }
+}
+
+.activeLink {
+  background-color: #3E3E3E;
+  border: 1px solid #9B9B9B;
+  border-bottom: none;
+
+  @media (max-width: 640px) {
+    border: none;
   }
 }

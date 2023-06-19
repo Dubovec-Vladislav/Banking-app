@@ -16,9 +16,9 @@ function Header(props) {
       <div className={style.body}>
         <div className={style.logo}>Logo</div>
         {isBurgerActive ?
-          <nav className={`${style.menu} ${style.menuActive}`}>
+          <nav className={`${style.menu} ${style.activeMenu}`}>
             <ul className={style.list}>
-              <Link name={"Главная"} path={"/"} />
+              <Link name={"Главная"} path={"/"} isLinkActive={true} />
               <Link name={"Преимущества"} path={"/1"} />
               <Link name={"Галерея"} path={"/2"} />
               <Link name={"Контакты"} path={"/3"} />
@@ -28,7 +28,7 @@ function Header(props) {
           :
           <nav className={style.menu}>
             <ul className={style.list}>
-              <Link name={"Главная"} path={"/"} />
+              <Link name={"Главная"} path={"/"} isLinkActive={true} />
               <Link name={"Преимущества"} path={"/1"} />
               <Link name={"Галерея"} path={"/2"} />
               <Link name={"Контакты"} path={"/3"} />
@@ -42,11 +42,19 @@ function Header(props) {
   );
 };
 
-function Link({ name, path }) {
+function Link({ name, path, isLinkActive }) {
   return (
-    <li className={style.item}>
-      <NavLink to={path} className={style.link}>{name}</NavLink>
-    </li>
+    <>
+      {isLinkActive ?
+        <li className={style.item}>
+          <NavLink to={path} className={`${style.link} ${style.activeLink}`}>{name}</NavLink>
+        </li>
+        :
+        <li className={style.item}>
+          <NavLink to={path} className={style.link}>{name}</NavLink>
+        </li>
+      }
+    </>
   );
 };
 
