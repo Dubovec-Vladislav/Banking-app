@@ -5,6 +5,7 @@
   z-index: 50;
   width: 100%;
   padding: 0px 9.375vw;
+  border-bottom: 1px solid #9B9B9B;
 
   &::before {
     content: '';
@@ -15,10 +16,6 @@
     width: 100%;
     height: 100%;
     background-color: #2A2A2A;
-  }
-
-  @media (max-width: 1280px) {
-    border-bottom: 1px solid #9B9B9B;
   }
 }
 
@@ -96,15 +93,11 @@
   border: 1px solid rgba(0, 0, 0, 0.0);
   border-bottom: none;
   letter-spacing: 1px;
+  cursor: pointer;
 
   &:hover {
     background-color: #3E3E3E;
-    border: 1px solid #9B9B9B;
     border-bottom: none;
-
-    @media (max-width: 640px) {
-      border: none;
-    }
   }
 
   @media (max-width: 640px) {

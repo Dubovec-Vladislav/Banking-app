@@ -5,7 +5,7 @@ import Button from '../General/Button'
 
 function Map(props) {
   return (
-    <div className={style.block}>
+    <div className={style.block} id="contacts">
       <div className={style.line}><Line text={"Где можно сделать нашу карту?"} /></div>
       <div className={style.body}>
         <div className={style.content}>

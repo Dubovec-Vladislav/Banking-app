@@ -4,7 +4,7 @@ import Button from '../General/Button'
 
 function Design(props) {
   return (
-    <div className={style.block}>
+    <div className={style.block} id="design">
       <div className={style.body}>
         <div className={style.left}>
           <div className={style.img}></div>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import style from './Header.module.scss'
-import { NavLink } from 'react-router-dom'
-import BurgerMenu from './BurgerMenu';
+import BurgerMenu from './BurgerMenu'
+import { Link, animateScroll as scroll } from "react-scroll"
+import { NavLink } from 'react-router-dom';
 
 function Header(props) {
   const [isBurgerActive, setBurgerActive] = useState(false);
@@ -18,21 +19,21 @@ function Header(props) {
         {isBurgerActive ?
           <nav className={`${style.menu} ${style.activeMenu}`}>
             <ul className={style.list}>
-              <Link name={"Главная"} path={"/"} isLinkActive={true} />
-              <Link name={"Преимущества"} path={"/1"} />
-              <Link name={"Галерея"} path={"/2"} />
-              <Link name={"Контакты"} path={"/3"} />
-              <Link name={"Заказать звонок"} path={"/4"} />
+              <MyLink name={"Дизайн"} to={"design"} thisPageLink={true}></MyLink>
+              <MyLink name={"Преимущества"} to={"advantages"} thisPageLink={true} />
+              <MyLink name={"Контакты"} to={"contacts"} thisPageLink={true} />
+              <MyLink name={"Галерея"} to={"/gallery"} />
+              <MyLink name={"Заказать звонок"} to={"#"} />
             </ul>
           </nav>
           :
           <nav className={style.menu}>
             <ul className={style.list}>
-              <Link name={"Главная"} path={"/"} isLinkActive={true} />
-              <Link name={"Преимущества"} path={"/1"} />
-              <Link name={"Галерея"} path={"/2"} />
-              <Link name={"Контакты"} path={"/3"} />
-              <Link name={"Заказать звонок"} path={"/4"} />
+              <MyLink name={"Дизайн"} to={"design"} thisPageLink={true}></MyLink>
+              <MyLink name={"Преимущества"} to={"advantages"} thisPageLink={true} />
+              <MyLink name={"Контакты"} to={"contacts"} thisPageLink={true} />
+              <MyLink name={"Галерея"} to={"/gallery"} />
+              <MyLink name={"Заказать звонок"} to={"#"} />
             </ul>
           </nav>
         }
@@ -42,16 +43,26 @@ function Header(props) {
   );
 };
 
-function Link({ name, path, isLinkActive }) {
+function MyLink({ name, to, thisPageLink }) {
   return (
     <>
-      {isLinkActive ?
+      {thisPageLink ?
         <li className={style.item}>
-          <NavLink to={path} className={`${style.link} ${style.activeLink}`}>{name}</NavLink>
+          <Link
+            className={style.link}
+            to={to}
+            activeClass="active"
+            spy={true}
+            smooth={true}
+            offset={-60}
+            duration={500}
+          >
+            {name}
+          </Link>
         </li>
         :
         <li className={style.item}>
-          <NavLink to={path} className={style.link}>{name}</NavLink>
+          <NavLink className={style.link} to={to}>{name}</NavLink>
         </li>
       }
     </>

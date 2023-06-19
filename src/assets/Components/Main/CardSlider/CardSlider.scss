@@ -1,5 +1,6 @@
 .card-slider {
   margin: 0px -9.375vw 3.8vw -9.375vw;
+  overflow: visible !important;
 
   &__block {}
 
@@ -20,6 +21,12 @@
     width: calc(210px + 130 * (100vw / 1440));
     height: calc(130px + 84 * (100vw / 1440));
     border-radius: 15px;
+    transition: 0.4s;
+
+    &:hover {
+      filter: drop-shadow(0px 25px 50px rgba(233, 160, 75, .3));
+      transform: scale(1.02);
+    }
 
     &::before {
       content: '';

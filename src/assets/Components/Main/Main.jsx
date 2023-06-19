@@ -10,7 +10,7 @@ import CardSlider from './CardSlider/CardSlider'
 function Main(props) {
   return (
     <div className="main">
-      <Hello />
+      <Hello/>
       <Design />
       <Advantages />
       <DesignSlider />
