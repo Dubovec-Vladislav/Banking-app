@@ -14,9 +14,9 @@ function Header(props) {
   return (
     <div className={style.block}>
       <div className={style.body}>
-        <div className={style.logo}><img src="#" alt="logo" /></div>
+        <div className={style.logo}>Logo</div>
         {isBurgerActive ?
-          <nav className={style.menu} style={{ top: "0", opacity: "1" }}>
+          <nav className={`${style.menu} ${style.menuActive}`}>
             <ul className={style.list}>
               <Link name={"Главная"} path={"/"} />
               <Link name={"Преимущества"} path={"/1"} />

@@ -34,7 +34,13 @@
 .logo {
   position: relative;
   z-index: 2;
-  padding: 22px 0px;
+  color: #D9D9D9;
+  padding: 21px 0px;
+  font-size: calc(14px + 4 * (100vw / 1440));
+
+  @media (max-width: 769px) {
+    font-size: calc(14px + 4 * ((100vw - 320px) / 1440));
+  }
 }
 
 .menu {
@@ -54,6 +60,11 @@
     opacity: 0;
     overflow: auto;
   }
+}
+
+.menuActive {
+  top: 0;
+  opacity: 1;
 }
 
 .list {
@@ -83,6 +94,7 @@
   transition: 0.5s ease;
   border: 1px solid rgba(0, 0, 0, 0.0);
   border-bottom: none;
+  letter-spacing: 1px;
 
   &:hover {
     background: #3E3E3E;
