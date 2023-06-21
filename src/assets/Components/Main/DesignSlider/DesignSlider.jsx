@@ -25,10 +25,6 @@ function DesignSlider(props) {
       spaceBetween: 10,
     },
     371: {
-      slidesPerView: 1.1,
-      spaceBetween: 0,
-    },
-    280: {
       slidesPerView: 1,
       spaceBetween: 0,
     },
