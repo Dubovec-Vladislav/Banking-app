@@ -1,4 +1,5 @@
-.main {
+.block {
+  flex-grow: 1;
   padding: calc(80px + 55 * (100vw / 1440)) 0px 0px 0px;
 
   @media (max-width: 769px) {

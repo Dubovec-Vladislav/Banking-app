@@ -1,14 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './BurgerMenu.scss'
 
-function BurgerMenu({ notifyHeaderMenu }) {
-  const [isBurgerActive, setBurgerActive] = useState(false);
-
-  function handleBurgerClick() {
-    setBurgerActive(!isBurgerActive);
-    notifyHeaderMenu();
-  };
-
+function BurgerMenu({ isBurgerActive, handleBurgerClick }) {
   return (
     <div className={`burger ${isBurgerActive ? "_active" : ""}`} onClick={handleBurgerClick}>
       <img className="telephone" src="img/telephone.svg" alt="telephone" />

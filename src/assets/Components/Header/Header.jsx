@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import style from './Header.module.scss'
 import BurgerMenu from './BurgerMenu'
-import { Link, animateScroll as scroll } from "react-scroll"
+// import { Link, animateScroll as scroll } from "react-scroll"
+import { Link } from "react-scroll"
 import { NavLink } from 'react-router-dom';
 
-function Header(props) {
+function Header({ handlePopupClick }) {
   const [isBurgerActive, setBurgerActive] = useState(false);
 
-  function notifyHeaderMenu() {
+  function handleBurgerClick() {
     setBurgerActive(!isBurgerActive);
     document.body.classList.toggle('_lock');
   };
@@ -15,7 +16,7 @@ function Header(props) {
   return (
     <div className={style.block}>
       <div className={style.body}>
-        <div className={style.logo}>Logo</div>
+        <div className={style.logo}><NavLink to="/">Logo</NavLink></div>
         {isBurgerActive ?
           <nav className={`${style.menu} ${style.activeMenu}`}>
             <ul className={style.list}>
@@ -23,7 +24,12 @@ function Header(props) {
               <MyLink name={"Преимущества"} to={"advantages"} thisPageLink={true} />
               <MyLink name={"Контакты"} to={"contacts"} thisPageLink={true} />
               <MyLink name={"Галерея"} to={"/gallery"} />
-              <MyLink name={"Заказать звонок"} to={"#"} />
+              <MyLink
+                name={"Заказать звонок"}
+                thisPageLink={true}
+                popup={true}
+                handlePopupClick={handlePopupClick}
+              />
             </ul>
           </nav>
           :
@@ -33,33 +39,55 @@ function Header(props) {
               <MyLink name={"Преимущества"} to={"advantages"} thisPageLink={true} />
               <MyLink name={"Контакты"} to={"contacts"} thisPageLink={true} />
               <MyLink name={"Галерея"} to={"/gallery"} />
-              <MyLink name={"Заказать звонок"} to={"#"} />
+              <MyLink
+                name={"Заказать звонок"}
+                thisPageLink={true}
+                popup={true}
+                handlePopupClick={handlePopupClick}
+              />
             </ul>
           </nav>
         }
-        <BurgerMenu notifyHeaderMenu={() => notifyHeaderMenu()} />
+        <BurgerMenu isBurgerActive={isBurgerActive} handleBurgerClick={handleBurgerClick} />
       </div>
-    </div >
+    </div>
   );
 };
 
-function MyLink({ name, to, thisPageLink }) {
+function MyLink({ name, to, thisPageLink, popup, handlePopupClick }) {
+  // debugger;
   return (
     <>
       {thisPageLink ?
-        <li className={style.item}>
-          <Link
-            className={style.link}
-            to={to}
-            activeClass="active"
-            spy={true}
-            smooth={true}
-            offset={-60}
-            duration={500}
-          >
-            {name}
-          </Link>
-        </li>
+        popup ?
+          <li className={style.item}>
+            <Link
+              className={style.link}
+              to={"hello"}
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-140}
+              duration={500}
+              onClick={handlePopupClick}
+            >
+              {name}
+            </Link>
+          </li>
+          :
+          <li className={style.item}>
+            <Link
+              className={style.link}
+              to={to}
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={500}
+            >
+              {name}
+            </Link>
+          </li>
         :
         <li className={style.item}>
           <NavLink className={style.link} to={to}>{name}</NavLink>

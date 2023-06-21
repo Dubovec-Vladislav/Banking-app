@@ -111,10 +111,16 @@ input[type='number'] {
 //-----------------------------------//
 .wrapper {
   position: relative;
+  display: flex;
   min-height: 100vh;
   background: linear-gradient(135deg, #2A2A2A, #161616);
   padding: 0px 9.375vw;
+  flex-direction: column;
   overflow: hidden;
+}
+
+.wrapperActive {
+
 }
 
 //-----------------------------------//

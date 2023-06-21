@@ -4,7 +4,7 @@ import Button from '../General/Button'
 
 function Hello(props) {
   return (
-    <div className={style.block}>
+    <div className={style.block} id="hello">
       <div className={style.body}>
         <div className={style.textSide}>
           <div className={style.title}>Металлические карты</div>

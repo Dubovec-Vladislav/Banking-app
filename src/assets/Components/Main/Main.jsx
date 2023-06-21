@@ -6,11 +6,13 @@ import Advantages from './Advantages/Advantages'
 import DesignSlider from './DesignSlider/DesignSlider'
 import Map from './Map/Map'
 import CardSlider from './CardSlider/CardSlider'
+import Popup from './Popup/Popup'
 
-function Main(props) {
+function Main({ isPopupActive, handlePopupClick }) {
   return (
     <div className="main">
-      <Hello/>
+      <Popup isPopupActive={isPopupActive} handlePopupClick={handlePopupClick}/>
+      <Hello />
       <Design />
       <Advantages />
       <DesignSlider />
