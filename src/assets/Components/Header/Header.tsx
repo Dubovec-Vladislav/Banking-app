@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import style from './Header.module.scss'
 import BurgerMenu from './BurgerMenu'
-// import { Link, animateScroll as scroll } from "react-scroll"
 import { Link } from "react-scroll"
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
-function Header({ handlePopupClick }) {
+interface HeaderProps {
+  handlePopupClick: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ handlePopupClick }) => {
   const [isBurgerActive, setBurgerActive] = useState(false);
 
-  function handleBurgerClick() {
+  const handleBurgerClick = () => {
     setBurgerActive(!isBurgerActive);
     document.body.classList.toggle('_lock');
   };
@@ -54,8 +57,17 @@ function Header({ handlePopupClick }) {
   );
 };
 
-function MyLink({ name, to, thisPageLink, popup, handlePopupClick }) {
-  // debugger;
+
+
+interface MyLinkProps {
+  name: string;
+  to?: string;
+  thisPageLink?: boolean;
+  popup?: boolean;
+  handlePopupClick?: () => void;
+}
+
+const MyLink: React.FC<MyLinkProps> = ({ name, to, thisPageLink, popup, handlePopupClick }) => {
   return (
     <>
       {thisPageLink ?
@@ -90,7 +102,7 @@ function MyLink({ name, to, thisPageLink, popup, handlePopupClick }) {
           </li>
         :
         <li className={style.item}>
-          <NavLink className={style.link} to={to}>{name}</NavLink>
+          <NavLink className={style.link} to={to || ""}>{name}</NavLink>
         </li>
       }
     </>
