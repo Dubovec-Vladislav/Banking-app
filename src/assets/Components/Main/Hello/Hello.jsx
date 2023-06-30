@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Hello.module.scss'
-import Button from '../General/Button'
+import Button from '../../General/Button'
 
 function Hello(props) {
   return (

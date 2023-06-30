@@ -1,10 +1,10 @@
 import React from 'react'
 import './CardSlider.scss'
-import Line from '../General/Line'
+import Line from '../../General/Line'
 import { Navigation, Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle'
-import Button from '../General/Button';
+import Button from '../../General/Button';
 
 function CardSlider(props) {
   const breakpoints = {

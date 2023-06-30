@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Map.module.scss'
-import Line from '../General/Line'
-import Button from '../General/Button'
+import Line from '../../General/Line'
+import Button from '../../General/Button'
 
 function Map(props) {
   return (

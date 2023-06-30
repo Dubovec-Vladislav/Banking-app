@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Design.module.scss'
-import Button from '../General/Button'
+import Button from '../../General/Button'
 
 function Design(props) {
   return (
