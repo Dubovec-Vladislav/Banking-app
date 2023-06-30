@@ -20,37 +20,20 @@ const Header: React.FC<HeaderProps> = ({ handlePopupClick }) => {
     <div className={style.block}>
       <div className={style.body}>
         <div className={style.logo}><NavLink to="/">Logo</NavLink></div>
-        {isBurgerActive ?
-          <nav className={`${style.menu} ${style.activeMenu}`}>
-            <ul className={style.list}>
-              <MyLink name={"Дизайн"} to={"design"} thisPageLink={true}></MyLink>
-              <MyLink name={"Преимущества"} to={"advantages"} thisPageLink={true} />
-              <MyLink name={"Контакты"} to={"contacts"} thisPageLink={true} />
-              <MyLink name={"Галерея"} to={"/gallery"} />
-              <MyLink
-                name={"Заказать звонок"}
-                thisPageLink={true}
-                popup={true}
-                handlePopupClick={handlePopupClick}
-              />
-            </ul>
-          </nav>
-          :
-          <nav className={style.menu}>
-            <ul className={style.list}>
-              <MyLink name={"Дизайн"} to={"design"} thisPageLink={true}></MyLink>
-              <MyLink name={"Преимущества"} to={"advantages"} thisPageLink={true} />
-              <MyLink name={"Контакты"} to={"contacts"} thisPageLink={true} />
-              <MyLink name={"Галерея"} to={"/gallery"} />
-              <MyLink
-                name={"Заказать звонок"}
-                thisPageLink={true}
-                popup={true}
-                handlePopupClick={handlePopupClick}
-              />
-            </ul>
-          </nav>
-        }
+        <nav className={`${style.menu} ${isBurgerActive ? style.activeMenu : ""}`}>
+          <ul className={style.list}>
+            <MyLink name={"Дизайн"} to={"design"} thisPageLink={true}></MyLink>
+            <MyLink name={"Преимущества"} to={"advantages"} thisPageLink={true} />
+            <MyLink name={"Контакты"} to={"contacts"} thisPageLink={true} />
+            <MyLink name={"Галерея"} to={"/gallery"} />
+            <MyLink
+              name={"Заказать звонок"}
+              thisPageLink={true}
+              popup={true}
+              handlePopupClick={handlePopupClick}
+            />
+          </ul>
+        </nav>
         <BurgerMenu isBurgerActive={isBurgerActive} handleBurgerClick={handleBurgerClick} />
       </div>
     </div>
@@ -90,7 +73,7 @@ const MyLink: React.FC<MyLinkProps> = ({ name, to, thisPageLink, popup, handlePo
           <li className={style.item}>
             <Link
               className={style.link}
-              to={to}
+              to={to || ""}
               activeClass="active"
               spy={true}
               smooth={true}
