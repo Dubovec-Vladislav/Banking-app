@@ -9,11 +9,11 @@ import { NavLink } from 'react-router-dom'
 //                   # Header                    //
 // --------------------------------------------- //
 
-interface HeaderProps {
+interface IHeaderProps {
   handlePopupClick?: () => void;
 }
 
-const Header: FC<HeaderProps> = ({ handlePopupClick }) => {
+const Header: FC<IHeaderProps> = ({ handlePopupClick }) => {
   const [isBurgerActive, setBurgerActive] = useState(false);
 
   const handleBurgerClick = () => {
@@ -55,14 +55,14 @@ const Header: FC<HeaderProps> = ({ handlePopupClick }) => {
 //                 # Header link                 //
 // --------------------------------------------- //
 
-interface MyLinkProps extends HeaderProps {
+interface IMyLinkProps extends IHeaderProps {
   name: string;
   to?: string;
   thisPageLink?: boolean;
   popup?: boolean;
 }
 
-const MyLink: FC<MyLinkProps> = ({ name, to, thisPageLink, popup, handlePopupClick }) => {
+const MyLink: FC<IMyLinkProps> = ({ name, to, thisPageLink, popup, handlePopupClick }) => {
   return (
     <>
       {thisPageLink ?
