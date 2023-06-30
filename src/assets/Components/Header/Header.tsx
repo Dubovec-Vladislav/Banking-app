@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, FC } from 'react'
 import style from './Header.module.scss'
 import BurgerMenu from './BurgerMenu'
 import { Link } from "react-scroll"
@@ -13,7 +13,7 @@ interface HeaderProps {
   handlePopupClick?: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ handlePopupClick }) => {
+const Header: FC<HeaderProps> = ({ handlePopupClick }) => {
   const [isBurgerActive, setBurgerActive] = useState(false);
 
   const handleBurgerClick = () => {
@@ -62,7 +62,7 @@ interface MyLinkProps extends HeaderProps {
   popup?: boolean;
 }
 
-const MyLink: React.FC<MyLinkProps> = ({ name, to, thisPageLink, popup, handlePopupClick }) => {
+const MyLink: FC<MyLinkProps> = ({ name, to, thisPageLink, popup, handlePopupClick }) => {
   return (
     <>
       {thisPageLink ?
