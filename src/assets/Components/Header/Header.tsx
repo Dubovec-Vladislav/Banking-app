@@ -4,6 +4,11 @@ import BurgerMenu from './BurgerMenu'
 import { Link } from "react-scroll"
 import { NavLink } from 'react-router-dom'
 
+
+// --------------------------------------------- //
+//                   # Header                    //
+// --------------------------------------------- //
+
 interface HeaderProps {
   handlePopupClick: () => void;
 }
@@ -40,7 +45,15 @@ const Header: React.FC<HeaderProps> = ({ handlePopupClick }) => {
   );
 };
 
+// --------------------------------------------- //
+//                   End Header                  //
+// --------------------------------------------- //
 
+
+
+// --------------------------------------------- //
+//                 # Header link                 //
+// --------------------------------------------- //
 
 interface MyLinkProps {
   name: string;
@@ -56,10 +69,8 @@ const MyLink: React.FC<MyLinkProps> = ({ name, to, thisPageLink, popup, handlePo
       {thisPageLink ?
         popup ?
           <li className={style.item}>
-            <Link
-              className={style.link}
+            <Link className={style.link}
               to={"hello"}
-              activeClass="active"
               spy={true}
               smooth={true}
               offset={-140}
@@ -74,7 +85,6 @@ const MyLink: React.FC<MyLinkProps> = ({ name, to, thisPageLink, popup, handlePo
             <Link
               className={style.link}
               to={to || ""}
-              activeClass="active"
               spy={true}
               smooth={true}
               offset={-60}
@@ -91,5 +101,10 @@ const MyLink: React.FC<MyLinkProps> = ({ name, to, thisPageLink, popup, handlePo
     </>
   );
 };
+
+// --------------------------------------------- //
+//                 End Header Link               //
+// --------------------------------------------- //
+
 
 export default Header;
