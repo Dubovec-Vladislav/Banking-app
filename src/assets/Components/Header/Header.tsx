@@ -1,4 +1,4 @@
-import React, { useState, FC } from 'react'
+import React, { useState, FC, MouseEvent } from 'react'
 import style from './Header.module.scss'
 import BurgerMenu from './BurgerMenu'
 import { Link } from "react-scroll"
@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom'
 // --------------------------------------------- //
 
 interface IHeaderProps {
-  handlePopupClick?: () => void;
+  handlePopupClick?: (e: MouseEvent<HTMLDivElement> | MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Header: FC<IHeaderProps> = ({ handlePopupClick }) => {

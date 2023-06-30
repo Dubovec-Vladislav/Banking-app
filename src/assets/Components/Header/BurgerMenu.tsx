@@ -3,7 +3,7 @@ import './BurgerMenu.scss';
 
 interface IBurgerMenuProps {
   isBurgerActive: boolean;
-  handleBurgerClick: (e: MouseEvent<HTMLDivElement>) => void;
+  handleBurgerClick: (e: MouseEvent<HTMLDivElement> | MouseEvent<HTMLButtonElement>) => void;
 }
 
 const BurgerMenu: FC<IBurgerMenuProps> = ({ isBurgerActive, handleBurgerClick }) => {

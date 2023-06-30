@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, MouseEvent } from 'react'
 import style from './Popup.module.scss'
 import Button from '../../General/Button'
 
@@ -9,7 +9,7 @@ import Button from '../../General/Button'
 
 interface IPopupProps {
   isPopupActive: boolean;
-  handlePopupClick: () => void;
+  handlePopupClick: (e: MouseEvent<HTMLDivElement> | MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Popup: FC<IPopupProps> = ({ isPopupActive, handlePopupClick }) => {

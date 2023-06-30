@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, MouseEvent } from 'react'
 import './Main.scss'
 import Hello from './Hello/Hello'
 import Design from './Design/Design'
@@ -15,7 +15,7 @@ import Popup from './Popup/Popup'
 
 interface IMainProps {
   isPopupActive: boolean;
-  handlePopupClick: () => void;
+  handlePopupClick: (e: MouseEvent<HTMLDivElement> | MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Main: FC<IMainProps> = ({ isPopupActive, handlePopupClick }) => {
