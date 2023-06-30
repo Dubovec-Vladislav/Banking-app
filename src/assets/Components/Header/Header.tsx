@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom'
 // --------------------------------------------- //
 
 interface HeaderProps {
-  handlePopupClick: () => void;
+  handlePopupClick?: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ handlePopupClick }) => {
@@ -55,12 +55,11 @@ const Header: React.FC<HeaderProps> = ({ handlePopupClick }) => {
 //                 # Header link                 //
 // --------------------------------------------- //
 
-interface MyLinkProps {
+interface MyLinkProps extends HeaderProps {
   name: string;
   to?: string;
   thisPageLink?: boolean;
   popup?: boolean;
-  handlePopupClick?: () => void;
 }
 
 const MyLink: React.FC<MyLinkProps> = ({ name, to, thisPageLink, popup, handlePopupClick }) => {
