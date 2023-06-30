@@ -1,9 +1,9 @@
 import React from 'react'
-import './General.scss'
+import style from './Line.module.scss'
 
 function Line({ text }) {
   return (
-    <div className="line">{text}</div>
+    <div className={style.line}>{text}</div>
   );
 };
 

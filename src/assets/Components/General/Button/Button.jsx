@@ -1,9 +1,9 @@
 import React from 'react'
-import './General.scss'
+import style from './Button.module.scss'
 
 function Button({ text }) {
   return (
-    <div className="btn">{text}</div>
+    <div className={style.btn}>{text}</div>
   );
 };
 

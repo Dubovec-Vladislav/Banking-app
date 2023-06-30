@@ -3,8 +3,8 @@ import { A11y } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css/bundle'
 import './DesignSlider.scss'
-import Line from '../../General/Line'
-import Button from '../../General/Button'
+import Line from '../../General/Line/Line'
+import Button from '../../General/Button/Button'
 
 function DesignSlider(props) {
   const breakpoints = {

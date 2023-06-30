@@ -1,6 +1,6 @@
 import React, { FC, MouseEvent } from 'react'
 import style from './Popup.module.scss'
-import Button from '../../General/Button'
+import Button from '../Button/Button'
 
 
 // --------------------------------------------- //

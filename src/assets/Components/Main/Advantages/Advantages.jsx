@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Advantages.module.scss'
-import Line from '../../General/Line'
+import Line from '../../General/Line/Line'
 
 function Advantages(props) {
   return (
