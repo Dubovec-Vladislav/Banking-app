@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { A11y } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css/bundle'
@@ -6,7 +6,12 @@ import './DesignSlider.scss'
 import Line from '../../General/Line/Line'
 import Button from '../../General/Button/Button'
 
-function DesignSlider(props) {
+
+// --------------------------------------------- //
+//                # Design slider                //
+// --------------------------------------------- //
+
+const DesignSlider: FC = () => {
   const breakpoints = {
     1025: {
       slidesPerView: 3.5,
@@ -62,5 +67,10 @@ function DesignSlider(props) {
     </div>
   );
 };
+
+// --------------------------------------------- //
+//              # End Design slider              //
+// --------------------------------------------- //
+
 
 export default DesignSlider;

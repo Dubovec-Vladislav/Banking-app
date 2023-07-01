@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 import style from './Advantages.module.scss'
 import Line from '../../General/Line/Line'
 
-function Advantages(props) {
+
+// --------------------------------------------- //
+//                 # Advantages                  //
+// --------------------------------------------- //
+
+const Advantages: FC = () => {
   return (
     <div className={style.block} id="advantages">
       <div className={style.line}><Line text={"6 причин выбрать нас"} /></div>
@@ -28,7 +33,24 @@ function Advantages(props) {
   );
 };
 
-function AdvantagesCard({ imgPath, imgName, title, text, rotate }) {
+// --------------------------------------------- //
+//                 End Advantages                //
+// --------------------------------------------- //
+
+
+// --------------------------------------------- //
+//               # Advantages card               //
+// --------------------------------------------- //
+
+interface IAdvantagesCardProps {
+  imgPath: string;
+  imgName: string;
+  title: string;
+  text: string;
+  rotate?: boolean;
+}
+
+const AdvantagesCard: FC<IAdvantagesCardProps> = ({ imgPath, imgName, title, text, rotate }) => {
   return (
     <div className={`${style.column} ${rotate ? style.rotate : ""}`}>
       <div className={style.item}>
@@ -39,5 +61,10 @@ function AdvantagesCard({ imgPath, imgName, title, text, rotate }) {
     </div>
   );
 }
+
+// --------------------------------------------- //
+//               End Advantages card             //
+// --------------------------------------------- //
+
 
 export default Advantages;

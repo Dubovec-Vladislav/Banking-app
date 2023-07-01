@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { FC } from 'react'
 import './CardSlider.scss'
 import Line from '../../General/Line/Line'
-import { Navigation, Pagination, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, A11y } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css/bundle'
-import Button from '../../General/Button/Button';
+import Button from '../../General/Button/Button'
 
-function CardSlider(props) {
+
+// --------------------------------------------- //
+//                 # Card slider                 //
+// --------------------------------------------- //
+
+const CardSlider: FC = () => {
   const breakpoints = {
     1200: {
       slidesOffsetBefore: -60,
@@ -91,5 +96,10 @@ function CardSlider(props) {
     </div >
   );
 };
+
+// --------------------------------------------- //
+//                 End Card slider               //
+// --------------------------------------------- //
+
 
 export default CardSlider;

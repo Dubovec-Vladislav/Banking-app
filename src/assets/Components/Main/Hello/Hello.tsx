@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 import style from './Hello.module.scss'
 import Button from '../../General/Button/Button'
 
-function Hello(props) {
+
+// --------------------------------------------- //
+//                    # Hello                    //
+// --------------------------------------------- //
+
+const Hello: FC = () => {
   return (
     <div className={style.block} id="hello">
       <div className={style.body}>
@@ -22,5 +27,10 @@ function Hello(props) {
     </div>
   );
 };
+
+// --------------------------------------------- //
+//                    End Hello                  //
+// --------------------------------------------- //
+
 
 export default Hello;

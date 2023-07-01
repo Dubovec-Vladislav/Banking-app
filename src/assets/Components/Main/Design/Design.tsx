@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 import style from './Design.module.scss'
 import Button from '../../General/Button/Button'
 
-function Design(props) {
+
+// --------------------------------------------- //
+//                   # Design                    //
+// --------------------------------------------- //
+
+const Design: FC = () => {
   return (
     <div className={style.block} id="design">
       <div className={style.body}>
@@ -22,5 +27,10 @@ function Design(props) {
     </div>
   );
 };
+
+// --------------------------------------------- //
+//                   End Design                  //
+// --------------------------------------------- //
+
 
 export default Design;
