@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import style from './Gallery.module.scss'
 import { Link } from 'react-router-dom'
 
@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom'
 // --------------------------------------------- //
 
 const Gallery: FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+  
   return (
     <div className={style.block}>
       <div className={style.body}>

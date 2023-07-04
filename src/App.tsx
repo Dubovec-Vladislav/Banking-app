@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react'
-import style from './app.module.scss'
+import style from './App.module.scss'
 import { Routes, Route } from 'react-router-dom'
 import Header from './assets/Components/Header/Header'
 import Main from './assets/Components/Main/Main'
