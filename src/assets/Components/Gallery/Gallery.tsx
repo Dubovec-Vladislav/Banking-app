@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom'
 // --------------------------------------------- //
 
 const Gallery: FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+  
   return (
     <div className={style.block}>
       <div className={style.body}>
