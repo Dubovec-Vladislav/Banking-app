@@ -39,7 +39,7 @@ const Header: FC<IHeaderProps> = ({ handlePopupClick }) => {
           <ul className={style.list}>
             <Routes>
               <Route path="/" element={Links}></Route>
-              <Route path="/gallery" element={<MyLink name={"На главную"} to={"/"} setBurgerActive={setBurgerActive} />}></Route>
+              <Route path="/gallery" element={<MyLink name={"Домой"} to={"/"} setBurgerActive={setBurgerActive} />}></Route>
             </Routes>
 
           </ul>
