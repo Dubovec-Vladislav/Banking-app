@@ -2,7 +2,7 @@ import React, { useState, FC, MouseEvent } from 'react'
 import style from './Header.module.scss'
 import BurgerMenu from './BurgerMenu'
 import { Link } from "react-scroll"
-import { NavLink } from 'react-router-dom'
+import { NavLink, Route, Routes } from 'react-router-dom'
 
 
 // --------------------------------------------- //
@@ -21,22 +21,27 @@ const Header: FC<IHeaderProps> = ({ handlePopupClick }) => {
     document.body.classList.toggle('_lock');
   };
 
+  const Links = <>
+    <MyLink name={"Дизайн"} to={"design"} thisPageLink={true} setBurgerActive={setBurgerActive} ></MyLink>
+    <MyLink name={"Преимущества"} to={"advantages"} thisPageLink={true} setBurgerActive={setBurgerActive} />
+    <MyLink name={"Контакты"} to={"contacts"} thisPageLink={true} setBurgerActive={setBurgerActive} />
+    <MyLink name={"Примеры работ"} to={"cards"} thisPageLink={true} setBurgerActive={setBurgerActive} />
+    <MyLink name={"Галерея"} to={"/gallery"} setBurgerActive={setBurgerActive} />
+    {/* <MyLink name={"Заказать звонок"} thisPageLink={true} popup={true} handlePopupClick={handlePopupClick} /> */}
+  </>
+
+
   return (
     <div className={style.block}>
       <div className={style.body}>
         <div className={style.logo}><NavLink to="/">Logo</NavLink></div>
         <nav className={`${style.menu} ${isBurgerActive ? style.activeMenu : ""}`}>
           <ul className={style.list}>
-            <MyLink name={"Дизайн"} to={"design"} thisPageLink={true}></MyLink>
-            <MyLink name={"Преимущества"} to={"advantages"} thisPageLink={true} />
-            <MyLink name={"Контакты"} to={"contacts"} thisPageLink={true} />
-            <MyLink name={"Галерея"} to={"/gallery"} />
-            <MyLink
-              name={"Заказать звонок"}
-              thisPageLink={true}
-              popup={true}
-              handlePopupClick={handlePopupClick}
-            />
+            <Routes>
+              <Route path="/" element={Links}></Route>
+              <Route path="/gallery" element={<MyLink name={"На главную"} to={"/"} setBurgerActive={setBurgerActive} />}></Route>
+            </Routes>
+
           </ul>
         </nav>
         <BurgerMenu isBurgerActive={isBurgerActive} handleBurgerClick={handleBurgerClick} />
@@ -60,9 +65,10 @@ interface IMyLinkProps extends IHeaderProps {
   to?: string;
   thisPageLink?: boolean;
   popup?: boolean;
+  setBurgerActive: (isActive: boolean) => void;
 }
 
-const MyLink: FC<IMyLinkProps> = ({ name, to, thisPageLink, popup, handlePopupClick }) => {
+const MyLink: FC<IMyLinkProps> = ({ name, to, thisPageLink, popup, setBurgerActive, handlePopupClick }) => {
   return (
     <>
       {thisPageLink ?
@@ -88,13 +94,14 @@ const MyLink: FC<IMyLinkProps> = ({ name, to, thisPageLink, popup, handlePopupCl
               smooth={true}
               offset={-60}
               duration={500}
+              onClick={() => setBurgerActive(false)}
             >
               {name}
             </Link>
           </li>
         :
         <li className={style.item}>
-          <NavLink className={style.link} to={to || ""}>{name}</NavLink>
+          <NavLink className={style.link} to={to || ""} onClick={() => setBurgerActive(false)}>{name}</NavLink>
         </li>
       }
     </>

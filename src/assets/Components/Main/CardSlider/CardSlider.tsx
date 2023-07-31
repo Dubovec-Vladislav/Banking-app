@@ -65,7 +65,7 @@ const CardSlider: FC = () => {
   };
 
   return (
-    <div className="card-slider__block">
+    <div className="card-slider__block" id='cards'>
       <div className="card-slider__body">
         <div className="card-slider__line"><Line text={"Уникальный дизайн по вашему запросу"} /></div>
         <Swiper className="card-slider" {...swiperOptions}>
